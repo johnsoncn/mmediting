@@ -88,3 +88,33 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+    """
+    python demo/restoration_video_demo.py \
+    ${CONFIG_FILE} \
+    ${CHECKPOINT_FILE} \
+    ${INPUT_DIR} \
+    ${OUTPUT_DIR} \
+    [--window-size=${WINDOW_SIZE}] \
+    [--device ${GPU_ID}]
+    
+    python demo/restoration_video_demo.py \
+    ./configs/restorers/basicvsr/basicvsr_reds4.py \
+    https://download.openmmlab.com/mmediting/restorers/basicvsr/basicvsr_reds4_20120409-0e599677.pth \
+    /home/dingchaofan/3d_reconstruction_meshroom/data/IMG_3272/ \
+    /home/dingchaofan/3d_reconstruction_meshroom/data/IMG_3272_VSR/
+    
+    python demo/restoration_video_demo.py \
+    ./configs/restorers/edvr/edvrm_wotsa_x4_g8_600k_reds.py \
+    https://download.openmmlab.com/mmediting/restorers/edvr/edvrm_wotsa_x4_8x4_600k_reds_20200522-0570e567.pth \
+    /home/dingchaofan/3d_reconstruction_meshroom/data/IMG_3272/ \
+    /home/dingchaofan/3d_reconstruction_meshroom/data/IMG_3272_VSR/
+    
+    
+    python demo/restoration_video_demo.py \
+    ./configs/restorers/real_basicvsr/realbasicvsr_c64b20_1x30x8_lr5e-5_150k_reds.py \
+    https://download.openmmlab.com/mmediting/restorers/real_basicvsr/realbasicvsr_c64b20_1x30x8_lr5e-5_150k_reds_20211104-52f77c2c.pth \
+    /home/dingchaofan/3d_reconstruction_meshroom/data/IMG_3272/ \
+    /home/dingchaofan/3d_reconstruction_meshroom/data/IMG_3272_VSR/
+    
+    """

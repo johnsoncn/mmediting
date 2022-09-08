@@ -63,6 +63,7 @@ def restoration_video_inference(model,
 
     # check if the input is a video
     file_extension = osp.splitext(img_dir)[1]
+    print(file_extension)
     if file_extension in VIDEO_EXTENSIONS:
         video_reader = mmcv.VideoReader(img_dir)
         # load the images
@@ -91,9 +92,15 @@ def restoration_video_inference(model,
 
         # prepare data
         sequence_length = len(glob.glob(osp.join(img_dir, '*')))
+        # print(glob.glob(osp.join(img_dir, '*')))
+        # print(img_dir, sequence_length)
+        # print(osp.join(img_dir, '*'))
         img_dir_split = re.split(r'[\\/]', img_dir)
+        # print('img_dir_split', img_dir_split)
         key = img_dir_split[-1]
-        lq_folder = reduce(osp.join, img_dir_split[:-1])
+        # lq_folder = reduce(osp.join, img_dir_split[:-1])
+        lq_folder = img_dir # 修改
+        # print(lq_folder)
         data = dict(
             lq_path=lq_folder,
             gt_path='',
